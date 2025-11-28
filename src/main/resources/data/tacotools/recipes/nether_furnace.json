@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "B B",
+    "NNN"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:nether_bricks"
+    },
+    "N": {
+      "item": "minecraft:netherrack"
+    }
+  },
+  "result": {
+    "item": "tacotools:nether_furnace",
+    "count": 1
+  }
+}
