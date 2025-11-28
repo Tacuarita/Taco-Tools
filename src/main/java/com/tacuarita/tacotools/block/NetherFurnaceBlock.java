@@ -15,28 +15,42 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class NetherFurnaceBlock extends AbstractFurnaceBlock implements BlockEntityProvider {
-	public NetherFurnaceBlock(Settings settings) {
-		super(settings);
-	}
+// Nether Furnace Block
+public class NetherFurnaceBlock
+    extends AbstractFurnaceBlock
+    implements BlockEntityProvider {
 
-	@Override
-	public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-		return new NetherFurnaceBlockEntity(pos, state);
-	}
+    public NetherFurnaceBlock(Settings settings) {
+        super(settings);
+    }
 
-	@Override
-	protected void openScreen(World world, BlockPos pos, PlayerEntity player) {
-		BlockEntity blockEntity = world.getBlockEntity(pos);
-		if (blockEntity instanceof NetherFurnaceBlockEntity) {
-			player.openHandledScreen((NamedScreenHandlerFactory) blockEntity);
-			player.incrementStat(Stats.INTERACT_WITH_FURNACE);
-		}
-	}
+    @Override
+    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return new NetherFurnaceBlockEntity(pos, state);
+    }
 
-	@Nullable
-	@Override
-	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-		return world.isClient ? null : checkType(type, TacoBlockEntities.NETHER_FURNACE, NetherFurnaceBlockEntity::tick);
-	}
+    @Override
+    protected void openScreen(World world, BlockPos pos, PlayerEntity player) {
+        BlockEntity blockEntity = world.getBlockEntity(pos);
+        if (blockEntity instanceof NetherFurnaceBlockEntity) {
+            player.openHandledScreen((NamedScreenHandlerFactory) blockEntity);
+            player.incrementStat(Stats.INTERACT_WITH_FURNACE);
+        }
+    }
+
+    @Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(
+        World world,
+        BlockState state,
+        BlockEntityType<T> type
+    ) {
+        return world.isClient
+            ? null
+            : checkType(
+                  type,
+                  TacoBlockEntities.NETHER_FURNACE,
+                  NetherFurnaceBlockEntity::tick
+              );
+    }
 }
