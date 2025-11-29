@@ -1,13 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "BBB",
-    "B B",
-    "NNN"
-  ],
+  "pattern": ["BBB", "B B", "NNN"],
   "key": {
     "B": {
-      "item": "minecraft:nether_bricks"
+      "item": "minecraft:basalt"
     },
     "N": {
       "item": "minecraft:netherrack"

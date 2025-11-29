@@ -1,8 +1,9 @@
 {
-  "parent": "minecraft:block/orientable",
+  "parent": "minecraft:block/orientable_with_bottom",
   "textures": {
-    "top": "minecraft:block/furnace_top",
-    "front": "minecraft:block/furnace_front_on",
-    "side": "minecraft:block/furnace_side"
+    "top": "tacotools:block/nether_furnace_top",
+    "bottom": "tacotools:block/nether_furnace_bottom",
+    "front": "tacotools:block/nether_furnace_front_on",
+    "side": "tacotools:block/nether_furnace_side"
   }
 }

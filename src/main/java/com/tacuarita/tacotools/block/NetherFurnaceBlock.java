@@ -15,7 +15,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-// Nether Furnace Block
 public class NetherFurnaceBlock
     extends AbstractFurnaceBlock
     implements BlockEntityProvider {
