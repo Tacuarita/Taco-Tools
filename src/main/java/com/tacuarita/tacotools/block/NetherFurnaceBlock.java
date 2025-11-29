@@ -3,7 +3,6 @@ package com.tacuarita.tacotools.block;
 import com.tacuarita.tacotools.block.entity.NetherFurnaceBlockEntity;
 import com.tacuarita.tacotools.registry.TacoBlockEntities;
 import net.minecraft.block.AbstractFurnaceBlock;
-import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -15,9 +14,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class NetherFurnaceBlock
-    extends AbstractFurnaceBlock
-    implements BlockEntityProvider {
+public class NetherFurnaceBlock extends AbstractFurnaceBlock {
 
     public NetherFurnaceBlock(Settings settings) {
         super(settings);
